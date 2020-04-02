@@ -124,3 +124,30 @@ The response should show the `version` value set to `3.6`.
 ```js
 { "featureCompatibilityVersion" : { "version" : "3.6" }, "ok" : 1 }
 ```
+
+### 5. Continue Upgrading
+
+We suggest continuing into the next section and [upgrading MongoDB to 4.2](#upgrade-mongodb-to-42).
+
+{{< note >}}
+
+**The MongoDB documentation provides instructions for [upgrading standalone MongoDB to 3.6](https://docs.mongodb.com/manual/release-notes/3.6-upgrade-standalone/).**
+
+{{</ note >}}
+
+## Upgrade MongoDB to 4.2
+
+You must successively upgrade major releases until you reach MongoDB 4.2.
+
+This will involve repeating the [previous section's steps](#mongo_3_6_0). **You only need to backup the database once, before beginning the successive update process.
+
+The required updates to reach 4.2 from 3.6 are:
+
+- 3.6 {{< icon "fas fa-long-arrow-alt-right" >}} 4.0 ([MongoDB Docs](https://docs.mongodb.com/manual/release-notes/4.0-upgrade-standalone/))
+- 4.0 {{< icon "fas fa-long-arrow-alt-right" >}} 4.2 ([MongoDB Docs](https://docs.mongodb.com/manual/release-notes/4.2-upgrade-standalone/))
+
+For each upgrade you must:
+
+1. Ensure `featureCompatibilityVersion` is set correctly before software upgrade
+2. Upgrade MongoDB software
+3. Set `featureCompatibilityVersion` to match the version of MongoDB you installed
