@@ -6,8 +6,10 @@
     {{ if eq .RelPermalink "/docs/" }}
     <div class="docs-landing">
       <div class="box docs-landing-card">
+        {{ $manualTop := (index .Site.Menus.manual 0)}}
+        {{ $manualFirstItem := (index $manualTop.Children 0)}}
         <h2>
-          <a href="/docs/manual">
+          <a href="{{ $manualFirstItem.URL }}">
             <i class="fas fa-book"></i> Manual
           </a>
         </h2>
@@ -25,8 +27,10 @@
         </ul>
       </div>
       <div class="box docs-landing-card">
+        {{ $developerTop := (index .Site.Menus.developer 0)}}
+        {{ $developerFirstItem := (index $developerTop.Children 0)}}
         <h2>
-          <a href="/docs/developer">
+          <a href="{{ $developerFirstItem.URL }}">
             <i class="fas fa-code"></i> Developer
           </a>
         </h2>
